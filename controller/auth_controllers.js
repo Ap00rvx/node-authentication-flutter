@@ -23,7 +23,7 @@ class AuthController {
                     });
                     await newUser.save();
                     const saved_user =await User.findOne({email:email});
-                    const token = jwt.sign({userID:saved_user._id},"secret",{expiresIn : '15d'}); 
+                    const token = jwt.sign({userID:saved_user._id},"secret",{expiresIn : '1500d'}); 
                     res.status(201).send({"status":"success", "message":"User created successfully","token":token});  
                
                 }
